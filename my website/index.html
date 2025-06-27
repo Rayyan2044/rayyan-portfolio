@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime World</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+       <h1>Welcome to Anime World</h1>
+           
+<button id="logout" onclick="logout()">Logout</button>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#popular">Popular Anime</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="anime-image">
+            <img src="img3.jpg">
+            <img src="img1.jpg">
+        </div>
+        <section id="about">
+            <h2>About Anime</h2>
+            <p>Anime (Japanese: アニメ, IPA: [aꜜɲime] ⓘ) (a term derived from a shortening of the English word animation) is hand-drawn and computer-generated animation originating from Japan. Outside Japan and in English, anime refers specifically to animation produced in Japan.[1] However, in Japan and in Japanese, anime describes all animated works, regardless of style or origin. Many works of animation with a similar style to Japanese animation are also produced outside Japan. Video games sometimes also feature themes and art styles that are sometimes labelled as anime.</p>
+        </section>
+
+        <section id="genres">
+            <h2>Genres</h2>
+            <ul>
+                <li>Action</li>
+                <li>Romance</li> 
+                <li>Fantasy</li>
+                <li>Science Fiction</li>
+                <li>Slice of Life</li>
+                <li>Adventure</li>
+            </ul>
+        </section>
+
+        <section id="popular">
+            <h2>Popular Anime</h2><nav>
+            
+            <ol>
+               <a href="onepiece.html"> One Piece</a><br><br>
+                <a href="naruto.html">Naruto </a><br><br>
+                <a href="bleach.html">Bleach</a><br><br>
+                <a href="jjk.html">Jujutsu Kaisen</a><br><br>
+                <a href="aot.html">Attack On Titan </a><br><br>
+                <a href="demonslayer.html">Demon Slayer </a><br><br>
+            </ol><nav>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Made by Rayyan.</p>
+    </footer>
+
+
+  <script>
+    const user = localStorage.getItem("loggedInUser");
+    if (!user) {
+      alert("You must log in first.");
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("welcomeUser").innerText = `Logged in as: ${user}`;
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }</script>
+</body>
+</html>

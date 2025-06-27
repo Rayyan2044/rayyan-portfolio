@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - ShopNow</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="auth.js"></script>
+</head>
+<body>
+  <header>
+    <h1>ShopNow</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Username:</label>
+      <input type="text" id="loginUser" required>
+      <label>Password:</label>
+      <input type="password" id="loginPass" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginMsg" class="form-message"></p>
+  </main>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("loginUser").value;
+      const password = document.getElementById("loginPass").value;
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const user = users.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        localStorage.setItem("loggedInUser", username);
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("loginMsg").textContent = "Invalid credentials!";
+      }
+    });
+  </script>
+</body>
+</html>

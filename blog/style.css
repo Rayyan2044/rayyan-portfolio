@@ -1,0 +1,128 @@
+:root {
+  --bg: #fff;
+  --text: #222;
+  --accent: #007bff;
+  --card-bg: #f0f0f0;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #90cdf4;
+  --card-bg: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+header {
+  background: var(--accent);
+  color: white;
+  padding: 1rem 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.post-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.post-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.post-card:hover {
+  transform: scale(1.02);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background: #eee;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: var(--accent);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+  nav.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}

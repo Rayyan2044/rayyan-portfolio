@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="aos/aos.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Rayyan's Blog</h1>
+      <nav id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#posts">Posts</a>
+        <a href="#contact">Contact</a>
+        <button id="toggle-theme">🌙</button>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <section id="home" data-aos="fade-up">
+    <h2>Welcome to My Blog!</h2>
+    <p>I share my ideas, tips, and projects here. Thanks for visiting!</p>
+  </section>
+
+  <section id="posts">
+    <h2 data-aos="fade-right">Latest Posts</h2>
+    <div class="post-grid">
+      <div class="post-card" data-aos="fade-up">
+        <h3>🎨 UI Design Tips</h3>
+        <p>Here are 5 tips to make your UI cleaner and more user-friendly.</p>
+      </div>
+      <div class="post-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>💡 My HTML Tricks</h3>
+        <p>Cool tags and features I learned while building my first site.</p>
+      </div>
+      <div class="post-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>📦 Hosting Your Page</h3>
+        <p>How to host your webpage for free using GitHub Pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="zoom-in">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Rayyan Majeed. Built with 💙</p>
+  </footer>
+
+  <script src="aos/aos.js"></script>
+  <script src="script.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
